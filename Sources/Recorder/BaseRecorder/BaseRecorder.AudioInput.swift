@@ -65,7 +65,7 @@ extension BaseRecorder {
 
 extension BaseRecorder.AudioInput: AVCaptureAudioDataOutputSampleBufferDelegate {
 
-  @objc func captureOutput(
+  @objc public func captureOutput(
     _ output: AVCaptureOutput,
     didOutput sampleBuffer: CMSampleBuffer,
     from connection: AVCaptureConnection
@@ -77,7 +77,7 @@ extension BaseRecorder.AudioInput: AVCaptureAudioDataOutputSampleBufferDelegate 
 
 extension BaseRecorder.AudioInput: ARSessionObserver {
 
-  func session(
+  public func session(
     _ session: ARSession,
     didOutputAudioSampleBuffer audioSampleBuffer: CMSampleBuffer
   ) {
@@ -96,4 +96,11 @@ extension BaseRecorder.AudioInput {
     guard started, useAudioEngine else { return }
     queue.async { [output] in output?(audioSampleBuffer) }
   }
+
+  func genericAudioEngine(_ audioEngine: GenericAudioEngine,
+      didOutputAudioSampleBuffer audioSampleBuffer: CMSampleBuffer
+    ) {
+      guard started, useAudioEngine else { return }
+      queue.async { [output] in output?(audioSampleBuffer) }
+    }
 }

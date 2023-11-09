@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88FC91AD2AFD462B00534F1B /* GenericAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC91AC2AFD462B00534F1B /* GenericAudioEngine.swift */; };
 		BE4C34242236BAB2007AE1EE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE4C34232236BAB2007AE1EE /* README.md */; };
 		BE7565A12471246500B7EED2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BE7565A02471246500B7EED2 /* .swiftlint.yml */; };
 		D500F73D257AB60000118C11 /* MetalTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D500F73A257AB60000118C11 /* MetalTexture.swift */; };
@@ -125,6 +126,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		88FC91AC2AFD462B00534F1B /* GenericAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAudioEngine.swift; sourceTree = "<group>"; };
 		BE4C33D02236A6BA007AE1EE /* SCNRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCNRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4C33D42236A6BA007AE1EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4C34232236BAB2007AE1EE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -330,6 +332,7 @@
 			children = (
 				D56D805C25F16ECB00935848 /* AudioEngine.Player.swift */,
 				D56D805D25F16ECB00935848 /* AudioEngine.swift */,
+				88FC91AC2AFD462B00534F1B /* GenericAudioEngine.swift */,
 				D56D805E25F16ECB00935848 /* AudioEngine.Player.State.swift */,
 			);
 			path = AudioEngine;
@@ -815,6 +818,7 @@
 				D5B923EB2510CC9C00D35585 /* VideoSettings.FileType.swift in Sources */,
 				D56915CF263F445B00591380 /* VideoSettings.CompressionProperties.swift in Sources */,
 				D5B923E12510CC9C00D35585 /* SCNView+MulticastDelegate.swift in Sources */,
+				88FC91AD2AFD462B00534F1B /* GenericAudioEngine.swift in Sources */,
 				D5B923F22510CC9C00D35585 /* UnfairAtomic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
