@@ -42,6 +42,8 @@ public struct VideoSettings {
 
   public var scalingMode: ScalingMode = .resizeAspectFill
 
+  public var networkOptimize: Bool = false
+
   /// The transform applied to video frames
   ///
   /// If `nil` an appropriate transform will be applied.

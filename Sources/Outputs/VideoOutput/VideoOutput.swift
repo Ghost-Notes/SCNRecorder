@@ -73,6 +73,8 @@ final class VideoOutput {
         try self.addVideoInput(videoSettings)
         try self.addAudioInput(audioSettings)
 
+        self.assetWriter.shouldOptimizeForNetworkUse = videoSettings.networkOptimize
+
         guard self.assetWriter.startWriting() else {
           throw self.assetWriter.error ?? Error.cantStartWriting
         }
