@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		88FC91AD2AFD462B00534F1B /* GenericAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FC91AC2AFD462B00534F1B /* GenericAudioEngine.swift */; };
+		88FFD1472BB4CC1D003FCE46 /* MTKView+MetalRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FFD1462BB4CC1D003FCE46 /* MTKView+MetalRecordable.swift */; };
+		88FFD14B2BB4CFA1003FCE46 /* MTKView+SelfSceneRecordable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FFD14A2BB4CFA1003FCE46 /* MTKView+SelfSceneRecordable.swift */; };
 		BE4C34242236BAB2007AE1EE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BE4C34232236BAB2007AE1EE /* README.md */; };
 		BE7565A12471246500B7EED2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BE7565A02471246500B7EED2 /* .swiftlint.yml */; };
 		D500F73D257AB60000118C11 /* MetalTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D500F73A257AB60000118C11 /* MetalTexture.swift */; };
@@ -127,6 +129,8 @@
 
 /* Begin PBXFileReference section */
 		88FC91AC2AFD462B00534F1B /* GenericAudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAudioEngine.swift; sourceTree = "<group>"; };
+		88FFD1462BB4CC1D003FCE46 /* MTKView+MetalRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+MetalRecordable.swift"; sourceTree = "<group>"; };
+		88FFD14A2BB4CFA1003FCE46 /* MTKView+SelfSceneRecordable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MTKView+SelfSceneRecordable.swift"; sourceTree = "<group>"; };
 		BE4C33D02236A6BA007AE1EE /* SCNRecorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SCNRecorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE4C33D42236A6BA007AE1EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE4C34232236BAB2007AE1EE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -538,6 +542,7 @@
 			isa = PBXGroup;
 			children = (
 				D5B923C92510CC9B00D35585 /* SCNView+MetalRecordable.swift */,
+				88FFD1462BB4CC1D003FCE46 /* MTKView+MetalRecordable.swift */,
 				D5B923CA2510CC9B00D35585 /* ARSCNView+CleanRecordable.swift */,
 			);
 			path = Extensions;
@@ -571,6 +576,7 @@
 			isa = PBXGroup;
 			children = (
 				D5B923DE2510CC9B00D35585 /* SCNView+SelfSceneRecordable.swift */,
+				88FFD14A2BB4CFA1003FCE46 /* MTKView+SelfSceneRecordable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -772,7 +778,9 @@
 				D5B924022510CC9C00D35585 /* CAMetalLayer+RecordableLayer.swift in Sources */,
 				D5B923E92510CC9C00D35585 /* VideoOutput.State.swift in Sources */,
 				D5B923DF2510CC9B00D35585 /* MTLPixelFormat+Helpers.swift in Sources */,
+				88FFD14B2BB4CFA1003FCE46 /* MTKView+SelfSceneRecordable.swift in Sources */,
 				D500F73D257AB60000118C11 /* MetalTexture.swift in Sources */,
+				88FFD1472BB4CC1D003FCE46 /* MTKView+MetalRecordable.swift in Sources */,
 				D5B923F92510CC9C00D35585 /* AssociatedStorage.swift in Sources */,
 				D5B924012510CC9C00D35585 /* RecordableLayer.swift in Sources */,
 				D5B923EF2510CC9C00D35585 /* Buffer.swift in Sources */,
