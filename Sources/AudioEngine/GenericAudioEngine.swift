@@ -41,7 +41,7 @@ public final class GenericAudioEngine {
         }
     }
 
-    @Observable public internal(set) var error: Swift.Error?
+    @SCNObservable public internal(set) var error: Swift.Error?
 
     public init() {
     }
