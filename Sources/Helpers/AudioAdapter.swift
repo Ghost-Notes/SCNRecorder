@@ -26,6 +26,8 @@
 import Foundation
 import AVFoundation
 
+#if !os(visionOS)
+
 final class AudioAdapter: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
 
   typealias Callback = (_ sampleBuffer: CMSampleBuffer) -> Void
@@ -53,3 +55,36 @@ final class AudioAdapter: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate
     callback(sampleBuffer)
   }
 }
+
+#else
+
+// WON"T DO ANYTHING on VISIONOS!
+
+final class AudioAdapter: NSObject {
+
+  typealias Callback = (_ sampleBuffer: CMSampleBuffer) -> Void
+
+  let queue: DispatchQueue
+
+  let callback: Callback
+
+  init(queue: DispatchQueue, callback: @escaping Callback) {
+    self.queue = queue
+    self.callback = callback
+    //output = AVCaptureAudioDataOutput()
+
+    super.init()
+    //output.setSampleBufferDelegate(self, queue: queue)
+  }
+
+  @objc func captureOutput(
+    _ output: AVCaptureOutput,
+    didOutput sampleBuffer: CMSampleBuffer,
+    from connection: AVCaptureConnection
+  ) {
+    callback(sampleBuffer)
+  }
+}
+
+
+#endif

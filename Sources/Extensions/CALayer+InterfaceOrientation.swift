@@ -29,9 +29,14 @@ import UIKit
 extension CALayer {
 
   var window: UIWindow? {
+#if !os(visionOS)
     (delegate as? UIView)?.window
-      ?? superlayer?.window
-      ?? UIApplication.shared.keyWindow
+    ?? superlayer?.window
+    ?? UIApplication.shared.keyWindow
+#else
+    (delegate as? UIView)?.window
+    ?? superlayer?.window
+#endif
   }
 
   public var interfaceOrientation: UIInterfaceOrientation {
@@ -44,13 +49,19 @@ extension CALayer {
 
   private var _interfaceOrientation: UIInterfaceOrientation {
     guard let window = window else { return .unknown }
+#if !os(visionOS)
     let fixedCoordinateSpace = window.screen.fixedCoordinateSpace
-
     let origin = convert(frame.origin, to: window.layer)
     let fixedOrigin = window.convert(origin, to: fixedCoordinateSpace)
 
     let isXGreater = fixedOrigin.x > origin.x
     let isYGreater = fixedOrigin.y > origin.y
+#else
+    let isXGreater = false
+    let isYGreater = false
+#endif
+
+
 
     switch (isXGreater, isYGreater) {
     case (true, true): return .portraitUpsideDown

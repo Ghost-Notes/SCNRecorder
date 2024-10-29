@@ -26,7 +26,11 @@
 import Foundation
 import ARKit
 
+#if !os(visionOS)
+
 extension ARSCNView: CleanRecordable {
 
   public var cleanPixelBuffer: CVPixelBuffer? { session.currentFrame?.capturedImage }
 }
+
+#endif

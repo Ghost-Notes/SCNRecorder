@@ -33,7 +33,9 @@ extension BaseRecorder {
 
     let queue: DispatchQueue
 
+#if !os(visionOS)
     let captureOutput = AVCaptureAudioDataOutput()
+#endif
 
     var audioFormat: AVAudioFormat?
 
@@ -46,7 +48,9 @@ extension BaseRecorder {
     init(queue: DispatchQueue) {
       self.queue = queue
       super.init()
+#if !os(visionOS)
       self.captureOutput.setSampleBufferDelegate(self, queue: queue)
+#endif
     }
 
     func start() { started = true }
@@ -56,13 +60,19 @@ extension BaseRecorder {
     func recommendedAudioSettingsForAssetWriter(
       writingTo outputFileType: AVFileType
     ) -> [String: Any] {
+#if !os(visionOS)
       audioFormat.map { AudioSettings(audioFormat: $0).outputSettings }
         ?? captureOutput.recommendedAudioSettingsForAssetWriter(writingTo: outputFileType)
         ?? AudioSettings().outputSettings
+#else
+      audioFormat.map { AudioSettings(audioFormat: $0).outputSettings }
+        ?? AudioSettings().outputSettings
+#endif
     }
   }
 }
 
+#if !os(visionOS)
 extension BaseRecorder.AudioInput: AVCaptureAudioDataOutputSampleBufferDelegate {
 
   @objc public func captureOutput(
@@ -85,6 +95,7 @@ extension BaseRecorder.AudioInput: ARSessionObserver {
     queue.async { [output] in output?(audioSampleBuffer) }
   }
 }
+#endif
 
 @available(iOS 13.0, *)
 extension BaseRecorder.AudioInput {

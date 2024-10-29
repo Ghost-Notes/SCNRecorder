@@ -70,13 +70,16 @@ final class Clean<T: CleanRecordable>: SelfRecordable {
   }
 
   func prepareForRecording() {
+#if !os(visionOS)
     (cleanRecordable as? SCNView)?.swizzle()
+#endif
     guard cleanRecorder == nil else { return }
 
     injectRecorder()
     assert(cleanRecorder != nil)
+#if !os(visionOS)
     (cleanRecordable as? SCNView)?.addDelegate(cleanRecorder!)
-
+#endif
     fixFirstLaunchFrameDrop()
   }
 }

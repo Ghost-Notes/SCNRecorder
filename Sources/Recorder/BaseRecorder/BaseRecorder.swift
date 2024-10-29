@@ -26,6 +26,7 @@
 import Foundation
 import CoreMedia
 import ARKit
+import UIKit
 
 public class BaseRecorder: NSObject {
 
@@ -95,6 +96,7 @@ public class BaseRecorder: NSObject {
   }
 }
 
+#if !os(visionOS)
 // MARK: - ARSessionDelegate
 extension BaseRecorder: ARSessionDelegate {
 
@@ -105,3 +107,4 @@ extension BaseRecorder: ARSessionDelegate {
     audioInput.session(session, didOutputAudioSampleBuffer: audioSampleBuffer)
   }
 }
+#endif

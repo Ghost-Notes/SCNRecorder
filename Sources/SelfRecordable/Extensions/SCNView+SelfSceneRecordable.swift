@@ -29,7 +29,9 @@ import SceneKit
 extension SCNView: SelfSceneRecordable {
 
   public func prepareForRecording() {
+#if !os(visionOS)
     Self.swizzle()
+#endif
 
     recordableLayer?.prepareForRecording()
 
@@ -37,8 +39,9 @@ extension SCNView: SelfSceneRecordable {
     injectRecorder()
 
     assert(sceneRecorder != nil)
+#if !os(visionOS)
     addDelegate(sceneRecorder!)
-
+#endif
     fixFirstLaunchFrameDrop()
   }
 }

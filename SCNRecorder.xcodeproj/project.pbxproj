@@ -28,13 +28,12 @@
 		D5A81479257AC6C5004C9E83 /* MTLPixelFormat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A81478257AC6C5004C9E83 /* MTLPixelFormat+Helpers.swift */; };
 		D5A81493257BF5FE004C9E83 /* SceneRecorderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A81492257BF5FE004C9E83 /* SceneRecorderTests.swift */; };
 		D5A814A6257C044B004C9E83 /* VideoSetting.Codec+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A814A5257C044B004C9E83 /* VideoSetting.Codec+Helpers.swift */; };
-		D5B831C8270A306D0000EA1A /* MulticastDelegate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B831C7270A306D0000EA1A /* MulticastDelegate.xcframework */; };
+		D5B831C8270A306D0000EA1A /* MulticastDelegate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B831C7270A306D0000EA1A /* MulticastDelegate.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
 		D5B831CB270A307B0000EA1A /* MulticastDelegate.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B831C7270A306D0000EA1A /* MulticastDelegate.xcframework */; };
 		D5B831CC270A307B0000EA1A /* MulticastDelegate.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5B831C7270A306D0000EA1A /* MulticastDelegate.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5B831CF270A31200000EA1A /* IOSurface+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B831CD270A31200000EA1A /* IOSurface+Size.swift */; };
 		D5B831D0270A31200000EA1A /* CALayer+InterfaceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B831CE270A31200000EA1A /* CALayer+InterfaceOrientation.swift */; };
 		D5B923DF2510CC9B00D35585 /* MTLPixelFormat+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9237B2510CC9A00D35585 /* MTLPixelFormat+Helpers.swift */; };
-		D5B923E12510CC9C00D35585 /* SCNView+MulticastDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B9237D2510CC9A00D35585 /* SCNView+MulticastDelegate.swift */; };
 		D5B923E42510CC9C00D35585 /* AVCaptureSession+BaseRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B923802510CC9A00D35585 /* AVCaptureSession+BaseRecorder.swift */; };
 		D5B923E72510CC9C00D35585 /* ImageOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B923852510CC9A00D35585 /* ImageOutput.swift */; };
 		D5B923E82510CC9C00D35585 /* VideoOutput.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B923882510CC9A00D35585 /* VideoOutput.Error.swift */; };
@@ -825,7 +824,6 @@
 				D5B923FB2510CC9C00D35585 /* Observable.swift in Sources */,
 				D5B923EB2510CC9C00D35585 /* VideoSettings.FileType.swift in Sources */,
 				D56915CF263F445B00591380 /* VideoSettings.CompressionProperties.swift in Sources */,
-				D5B923E12510CC9C00D35585 /* SCNView+MulticastDelegate.swift in Sources */,
 				88FC91AD2AFD462B00534F1B /* GenericAudioEngine.swift in Sources */,
 				D5B923F22510CC9C00D35585 /* UnfairAtomic.swift in Sources */,
 			);
@@ -1042,6 +1040,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gora.studio.SCNRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1071,6 +1070,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = gora.studio.SCNRecorder;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
